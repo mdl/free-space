@@ -1,0 +1,37 @@
+<div class="panels">
+  <config-panel
+    (configChange)="onConfigChange($event)"
+    class="top-bar">
+  </config-panel>
+
+  <results-panel
+    [clusters]="clusters"
+    [colorMap]="colorMap">
+  </results-panel>
+
+  <statistics-panel
+    [statistics]="statistics">
+  </statistics-panel>
+</div>
+
+<canvas class="canvas" #canvas></canvas>
+<loading-spinner *ngIf="processingStart"></loading-spinner>
+
+<div class="view-toggles">
+  <mat-slide-toggle
+    color="primary"
+    (change)="displaySpheresChange($event)"
+    [checked]="displaySpheres">
+    Spheres
+  </mat-slide-toggle>
+
+  <br>
+  <br>
+
+  <mat-slide-toggle
+    color="primary"
+    (change)="displayPointsChange($event)"
+    [checked]="displayPoints">
+    Points
+  </mat-slide-toggle>
+</div>

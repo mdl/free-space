@@ -1,0 +1,65 @@
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  color: var(--dark);
+  margin: 0;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: IBM Plex Sans, sans-serif;
+}
+
+*:focus {
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-width: 1px;
+  outline-color: var(--sea);
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  &:not(:disabled) {cursor: pointer}
+
+  margin: 0;
+  background-color: var(--white);
+  border: none;
+}
+
+input, select, textarea {
+  :not(:disabled) {cursor: pointer}
+
+  outline: none !important;
+  margin: 0;
+  border: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+
+  // Drop autofill default styles
+  &:-webkit-autofill {
+    background-color: transparent;
+    transition: background-color 999999999s ease-in-out 0s;
+  }
+}
+
+.clickable{cursor: pointer}

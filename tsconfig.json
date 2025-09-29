@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "utils": ["src/utils"],
+      "utils/*": ["src/utils/*"],
+      "types": ["src/types"],
+      "types/*": ["src/types/*"],
+      "const": ["src/const"],
+      "const/*": ["src/const/*"]
+    }
+  },
+  "include": ["src", "@types"]
+}

@@ -1,0 +1,18 @@
+General description of clustering algorithms
+https://en.wikipedia.org/wiki/Cluster_analysis
+
+General description of popular density-based algorithm DBSCAN
+https://en.wikipedia.org/wiki/DBSCAN
+
+Implementation of density-based clustering algorithms on javascript
+https://github.com/uhho/density-clustering
+
+Random space filling with non-overlapping shapes
+http://paulbourke.net/fractals/randomtile/
+http://paulbourke.net/fractals/randomtile/statistical_geometry_examples.pdf
+
+// DBSCAN++
+https://arxiv.org/pdf/1810.13105.pdf
+
+// Fast search in radius for DBSCAN
+https://github.com/jbehley/octree
