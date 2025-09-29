@@ -1,27 +1,31 @@
-# FreeSpace
+# Free-Space
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+**Free-Space** is an web application that simulates and visualizes 3d *“free space”* by randomly packing non-overlapping spheres inside a bounded box and then clustering the remaining (void) space using a DBSCAN-like approach. The results are rendered with **three.js**, allowing interactive exploration of point clusters in 3d via orbit controls.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##  Features
 
-## Code scaffolding
+- Generate non-overlapping spheres of a given radius inside a 3D box.  
+- Build a regular 3D grid of sample points within the box.  
+- Remove points that fall inside any sphere (leaving **void points**).  
+- Detect **core points** among void points (DBSCAN core detection with octree neighbor search) in parallel **Web Workers**.  
+- Expand clusters on the main worker and stream results to the Angular UI.  
+- Visualize clusters as colored **point clouds**, with optional sphere rendering.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+##  Tech Stack & Key Dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- **Frontend Framework**: `@angular/* v18`  
+- **Rendering**: `three (0.125.0)` + `three-orbitcontrols`  
+- **Spatial Indexing**: `d3-octree`  
+- **Functional Helpers**: `ramda`  
+- **Concurrency**: Web Workers (multi-worker setup, dynamically split via `navigator.hardwareConcurrency`)  
+- **Reactive Streams**: `RxJS` (for streaming worker results to UI)  
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##  Preview
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![img.png](img.png)
